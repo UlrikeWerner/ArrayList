@@ -44,13 +44,18 @@ public class School {
         studentList.add(student);
     }
     public Student findStudentById(int matriculationNumber){
-        //Student student = new Student();
         for (Student student : studentList){
-            //Student test = (Student) student;
-            if(student.getMatriculationNumber() == matriculationNumber){
+            if(student.getMatriculationNumber() ==  matriculationNumber){
                 return student;
             }
         }
-        return new Student();
+        return null;
+    }
+
+    public void deleteStudent(int matriculationNumber){
+        studentList.remove(findStudentById(matriculationNumber));
+    }
+    public void deleteStudent(Student student){
+        studentList.remove(student);
     }
 }

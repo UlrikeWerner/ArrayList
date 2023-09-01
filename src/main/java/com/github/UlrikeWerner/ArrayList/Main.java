@@ -23,5 +23,15 @@ public class Main {
 
         System.out.println("-----------------------------");
         System.out.println(gymnasium.findStudentById(526185));
+
+        System.out.println("-----------------------------");
+        gymnasium.deleteStudent(526185);
+        System.out.println(gymnasium.findStudentById(526185));
+        System.out.println(gymnasium);
+
+        System.out.println("-----------------------------");
+        gymnasium.deleteStudent(student526183);
+        System.out.println(gymnasium.findStudentById(526183));
+        System.out.println(gymnasium);
     }
 }
