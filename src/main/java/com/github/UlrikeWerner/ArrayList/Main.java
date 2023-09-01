@@ -33,11 +33,6 @@ public class Main {
         System.out.println(gymnasium);
 
         System.out.println("-----------------------------");
-        gymnasium.deleteStudent(student526183);
-        System.out.println(gymnasium.findStudentById(526183));
-        System.out.println(gymnasium);
-
-        System.out.println("-----------------------------");
         gymnasium.addStudent(student526183);
         student526183.addCourse(css101);
         System.out.println(gymnasium.findStudentById(526183));

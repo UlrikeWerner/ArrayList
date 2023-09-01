@@ -1,22 +1,14 @@
 package com.github.UlrikeWerner.ArrayList;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class School {
-    protected List<Student> studentList = new ArrayList<>();
+    //protected List<Student> studentList = new ArrayList<>();
+    private Map<Integer, Student> studentList = new HashMap<>();
 
     public School(){}
-    public School(List<Student> studentList) {
-        this.studentList = studentList;
-    }
 
-    public List<Student> getStudentList() {
-        return studentList;
-    }
-
-    public void setStudentList(List<Student> studentList) {
+    public void setStudentList(Map<Integer, Student> studentList) {
         this.studentList = studentList;
     }
 
@@ -41,28 +33,16 @@ public class School {
     }
 
     public void addStudent(Student student){
-        studentList.add(student);
+        studentList.put(student.getMatriculationNumber(), student);
     }
     public void deleteStudent(int matriculationNumber){
-        studentList.remove(findStudentById(matriculationNumber));
+        studentList.remove(matriculationNumber);
     }
-    public void deleteStudent(Student student){
-        studentList.remove(student);
-    }
+
     public Student findStudentById(int matriculationNumber){
-        for (Student student : studentList){
-            if(student.getMatriculationNumber() ==  matriculationNumber){
-                return student;
-            }
-        }
-        return null;
+        return studentList.get(matriculationNumber);
     }
     public List<Course> findCoursesByStudentId(int matriculationNumber){
-        for (Student student : studentList){
-            if(student.getMatriculationNumber() ==  matriculationNumber){
-                return student.getCourseList();
-            }
-        }
-        return null;
+        return findStudentById(matriculationNumber).getCourseList();
     }
 }
