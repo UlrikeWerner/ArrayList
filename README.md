@@ -18,6 +18,9 @@ Füge der Studentenklasse eine Methode hinzu, mit der man Kurse zum*zur Student 
 
 Implementiere eine Methode innerhalb der School Klasse, die alle Kurse eines*einer bestimmten Students zu ermitteln (anhand einer Matrikelnummer).
 
+### Zweiter Block Aufgabe
+Schritt 1: Baut eure Applikation aus dem List-Vortrag von ArrayList in HashMap um.
+
 ### Super Bonus
 Schreibe eine Klasse 'Sack', die wie eine ArrayList funktioniert. Sie darf dazu nur primitive Datentypen und Arrays verwenden.
 
