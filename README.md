@@ -24,3 +24,10 @@ Schreibe eine Klasse 'Sack', die wie eine ArrayList funktioniert. Sie darf dazu 
 Implementiere Schritt für Schritt die Methoden add, get, size, remove last, remove by index, und so weiter.
 
 Tipp: Vielleicht hilft Dir dieses Video: https://www.youtube.com/watch?v=wynYYts1uS0
+
+### Super extra Bonus
+Schreibe eine Klasse 'Beutel', die wie der 'Sack' funktioniert, aber nur primitive Datentypen (keine Arrays!!!) verwendet.
+
+Auch hier implementiere Schritt für Schritt die Methoden add, get, size, remove last, remove by index, und so weiter.
+
+Auch hierzu gibt es ein Video als Tipp: https://www.youtube.com/watch?v=_-Mqs8nS6Mk
