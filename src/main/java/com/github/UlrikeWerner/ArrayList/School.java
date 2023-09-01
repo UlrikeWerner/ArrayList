@@ -5,18 +5,18 @@ import java.util.List;
 import java.util.Objects;
 
 public class School {
-    protected List<Object> studentList = new ArrayList<>();
+    protected List<Student> studentList = new ArrayList<>();
 
     public School(){}
-    public School(List<Object> studentList) {
+    public School(List<Student> studentList) {
         this.studentList = studentList;
     }
 
-    public List<Object> getStudentList() {
+    public List<Student> getStudentList() {
         return studentList;
     }
 
-    public void setStudentList(List<Object> studentList) {
+    public void setStudentList(List<Student> studentList) {
         this.studentList = studentList;
     }
 
@@ -40,7 +40,22 @@ public class School {
         return Objects.hash(studentList);
     }
 
-    public void addStudent(Object student){
+    public void addStudent(Student student){
         studentList.add(student);
+    }
+    public Student findStudentById(int matriculationNumber){
+        for (Student student : studentList){
+            if(student.getMatriculationNumber() ==  matriculationNumber){
+                return student;
+            }
+        }
+        return null;
+    }
+
+    public void deleteStudent(int matriculationNumber){
+        studentList.remove(findStudentById(matriculationNumber));
+    }
+    public void deleteStudent(Student student){
+        studentList.remove(student);
     }
 }

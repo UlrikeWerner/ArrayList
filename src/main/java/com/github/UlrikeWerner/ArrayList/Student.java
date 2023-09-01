@@ -7,6 +7,7 @@ public class Student {
     protected String firstName;
     protected String lastName;
 
+    public Student(){}
     public Student(int matriculationNumber, String firstName, String lastName){
         this.matriculationNumber = matriculationNumber;
         this.firstName = firstName;
