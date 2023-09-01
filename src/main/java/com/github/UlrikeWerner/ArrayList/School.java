@@ -43,6 +43,12 @@ public class School {
     public void addStudent(Student student){
         studentList.add(student);
     }
+    public void deleteStudent(int matriculationNumber){
+        studentList.remove(findStudentById(matriculationNumber));
+    }
+    public void deleteStudent(Student student){
+        studentList.remove(student);
+    }
     public Student findStudentById(int matriculationNumber){
         for (Student student : studentList){
             if(student.getMatriculationNumber() ==  matriculationNumber){
@@ -51,11 +57,12 @@ public class School {
         }
         return null;
     }
-
-    public void deleteStudent(int matriculationNumber){
-        studentList.remove(findStudentById(matriculationNumber));
-    }
-    public void deleteStudent(Student student){
-        studentList.remove(student);
+    public List<Course> findCoursesByStudentId(int matriculationNumber){
+        for (Student student : studentList){
+            if(student.getMatriculationNumber() ==  matriculationNumber){
+                return student.getCourseList();
+            }
+        }
+        return null;
     }
 }

@@ -1,11 +1,14 @@
 package com.github.UlrikeWerner.ArrayList;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Student {
     protected int matriculationNumber;
     protected String firstName;
     protected String lastName;
+    protected List<Course> courseList = new ArrayList<>();
 
     public Student(){}
     public Student(int matriculationNumber, String firstName, String lastName){
@@ -37,6 +40,13 @@ public class Student {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    public List<Course> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
+    }
 
     @Override
     public String toString() {
@@ -44,6 +54,7 @@ public class Student {
                 "matriculationNumber=" + matriculationNumber +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", courseList=" + courseList +
                 '}';
     }
 
@@ -52,11 +63,15 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return matriculationNumber == student.matriculationNumber && Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName);
+        return matriculationNumber == student.matriculationNumber && Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName) && Objects.equals(courseList, student.courseList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(matriculationNumber, firstName, lastName);
+        return Objects.hash(matriculationNumber, firstName, lastName, courseList);
+    }
+
+    public void addCourse(Course course){
+        courseList.add(course);
     }
 }
